@@ -1,0 +1,17 @@
+{
+    "name": "cainho/experimente",
+    "require": {
+        "cboden/ratchet": "^0.4.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Experimente\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "drpidman",
+            "email": "augustocaio663@gmail.com"
+        }
+    ]
+}
