@@ -446,12 +446,13 @@ body {
 .form-control input {
     width: 100%;
     padding: 1.5rem 1.5rem;
+    
+    
     border: none;
-    outline: none;
     border-bottom: 0.5px solid transparent;
     background-color: rgb(33, 33, 33);
     transition: 200ms ease-in-out;
-
+    outline: none;
     border-top-left-radius: .3rem;
     border-top-right-radius: .3rem;
 
@@ -467,6 +468,7 @@ body {
 
 .form-control span {
     position: absolute;
+    padding: 0 .5rem;
     top: 0;
     left: 0;
     color: #a2a2a2;
@@ -483,8 +485,9 @@ body {
 label:focus-within > span,
 input:not(:placeholder-shown) + span{
     color: #8093fd;
-    transform:translateY(-2px) translateX(20px);
-
+    transform:translateY(-5px) translateX(20px);
+    border-radius: 20px;
+    background-color: rgb(33, 33, 33);
 }
 
 
