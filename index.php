@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="css/alert/alert.css">
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        let host = "ws://<?php echo $_SERVER['SERVER_ADDR'] ?>:8090";
+    </script>
+
     <title>Experimente Senac</title>
     <body>
     <!-- Herosection abriga todo o conteudo que tera uma imagem de fundo -->

@@ -16,6 +16,10 @@ if(isAuth()) {
     <head>
         <title></title>
         <link rel="stylesheet" href="../../css/svlogs/main.css">
+
+        <script>
+            let host = "ws://<?php echo $_SERVER['SERVER_ADDR'] ?>:8090";
+        </script>
     </head>
 
     <body>
@@ -63,7 +67,7 @@ if(isAuth()) {
         </div>
 
     <script>
-        const socket = new WebSocket("ws://192.168.0.110:8090");
+        const socket = new WebSocket(host);
         const data_table = document.getElementById("live-data")
         /**
          * Objetos retornados:

@@ -1,4 +1,8 @@
-const socket = new WebSocket("ws://192.168.0.110:8090");
+const socket = new WebSocket(host);
+
+socket.onerror = function(err) {
+    console.log("Falha ao conectar ao socket", err);
+}
 
 window.addEventListener('scroll', () => {
 
