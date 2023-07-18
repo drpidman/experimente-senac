@@ -11,7 +11,14 @@ if (!$INPUT_EMAIL) {
 }
 
 // stmt signfica statement
-$stmt = $db->prepare("DELETE users WHERE email = :email_usuario");
+$stmt = $db->prepare("DELETE FROM users WHERE email = :email_usuario");
+if (!$stmt) {
+    echo json_encode([
+        "status" => "OK",
+        "message" => "Erro ao preparar o estado do sql" . $db->lastErrorMsg()
+    ]);
+}
+
 $stmt->bindParam(":email_usuario", $INPUT_EMAIL, SQLITE3_TEXT);
 
 
@@ -19,7 +26,7 @@ $res = $stmt->execute();
 if ($res) {
     echo json_encode([
         "status" => "OK",
-        "message" => "Usuario"
+        "message" => "Usuario deletado"
     ]);
 } else {
     echo json_encode([
