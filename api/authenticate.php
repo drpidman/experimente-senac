@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 $db = new SQLite3("../db/user.sqlite3");
 
 $LOGIN = filter_input(INPUT_POST, "login", FILTER_SANITIZE_STRING);
@@ -9,7 +10,6 @@ $PASSWORD = filter_input(INPUT_POST, "password", FILTER_SANITIZE_STRING);
 $stmt = $db->prepare(
     "SELECT  login, password from admins WHERE login = :login"
 );
-
 if (!$stmt) {
     echo json_encode(["status"=>"err: " . $db->lastErrorMsg() ]);
     return;

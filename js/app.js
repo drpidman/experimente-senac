@@ -1,4 +1,4 @@
-const socket = new WebSocket(host);
+const socket = new WebSocket("ws://localhost:8090");
 
 socket.onerror = function(err) {
     console.log("Falha ao conectar ao socket", err);

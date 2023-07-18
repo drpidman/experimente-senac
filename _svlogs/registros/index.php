@@ -18,7 +18,7 @@ if(isAuth()) {
         <link rel="stylesheet" href="../../css/svlogs/main.css">
 
         <script>
-            let host = "ws://<?php echo $_SERVER['SERVER_ADDR'] ?>:8090";
+            let host = "ws://localhost:8090";
         </script>
     </head>
 

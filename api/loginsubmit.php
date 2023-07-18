@@ -11,10 +11,7 @@ $USER_TELEPHONE     = filter_input(INPUT_POST, 'telefone', FILTER_SANITIZE_STRIN
 $USER_MAIL          = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
 
 $USER_COMPLETE_NAME = $USERNAME . " " . $USER_SURNAME;
-
 $USER_PASSWORD      = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-$PASS = password_hash($USER_PASSWORD, PASSWORD_BCRYPT);
-
 
 $stmt = $db->prepare(
     "INSERT INTO users(username, instagram, telefone, email, password) VALUES(:username, :instagram, :telefone, :email, :password)"
