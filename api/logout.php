@@ -1,5 +1,6 @@
 <?php
-$INPUT_EMAIL = $_POST["email"];
+// filtrar a input
+$INPUT_EMAIL = input_filter(INPUT_POST, "email", FILTER_SANITIZE_STRING);
 
 $db = new SQLite3("../db/user.sqlite3");
 
@@ -17,10 +18,10 @@ if (!$stmt) {
         "status" => "OK",
         "message" => "Erro ao preparar o estado do sql" . $db->lastErrorMsg()
     ]);
+    return;
 }
 
 $stmt->bindParam(":email_usuario", $INPUT_EMAIL, SQLITE3_TEXT);
-
 
 $res = $stmt->execute();
 if ($res) {
